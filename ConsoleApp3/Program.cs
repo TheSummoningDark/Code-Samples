@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
+
+    /// <summary>
+    /// DAG Graph shortest paths algorithm implementation challenge
+    /// takes in verticies in the form of city names and finds the shortest 
+    /// path from source cities to destination cities using a modified 
+    /// dijkstra's shortest path algorithm
+    /// </summary>
     class Graph
     {
         Dictionary<string, int> nameToInt;
@@ -19,14 +26,24 @@ namespace ConsoleApp3
             adjList = new Dictionary<int, HashSet<int>>();
             vertexWeight = new Dictionary<int, int>();
         }
-
+        /// <summary>
+        /// Adds verticies to a dictonary that maps names to unique integers 
+        /// then maps that unique integer to its given weight
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="weight"></param>
         void AddAVertex(string name, int weight) {
             int index = nameToInt.Count;
             nameToInt.Add(name,index);
             vertexWeight.Add(index, weight);
             
         }
-
+        /// <summary>
+        /// Adds connections between verticies by using the index as key and adding the destination
+        /// to a hashset representing connections
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="desitnation"></param>
         void AddAEdge(string source, string desitnation) {
             HashSet<int> edges;
             int index;
@@ -43,7 +60,12 @@ namespace ConsoleApp3
             }
 
         }
-
+        /// <summary>
+        /// Helper method to topologically sort the DAG
+        /// </summary>
+        /// <param name="v"></param>
+        /// <param name="visited"></param>
+        /// <param name="stack"></param>
         void topoSortHelp(int v, bool[] visited, ref Stack<int> stack) {
             visited[v] = true;
             HashSet<int> adjVerticies;
@@ -56,7 +78,13 @@ namespace ConsoleApp3
                     }
             stack.Push(v);
         }
-
+        /// <summary>
+        /// Method to find the shortest path from a source city to a destination.
+        /// Prints out the cost of the path if there is one or NO if there is no connection 
+        /// between the cities
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="destName"></param>
         void FindShortestPath(string name, string destName) {
             int sourceVertex;
             int destVertex;
@@ -138,12 +166,11 @@ namespace ConsoleApp3
                 tokens = Console.ReadLine().Split(' ');
                 myGraph.FindShortestPath(tokens[0], tokens[1]);
             }
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
+
 
             Console.ReadLine();
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+           
         }
     }
 }
