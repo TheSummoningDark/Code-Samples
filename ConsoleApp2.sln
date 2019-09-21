@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kattis", "ConsoleApp2\Kattis.csproj", "{75017319-60D3-4E42-88FC-5A04205AA616}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75017319-60D3-4E42-88FC-5A04205AA616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75017319-60D3-4E42-88FC-5A04205AA616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75017319-60D3-4E42-88FC-5A04205AA616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75017319-60D3-4E42-88FC-5A04205AA616}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BBE341A-9B49-4ED3-A126-AFE3D431083A}
+	EndGlobalSection
+EndGlobal
