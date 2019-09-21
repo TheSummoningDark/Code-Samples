@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// Algorithm challenge to find majority elements. Given a distance between stars and a galaxy
+/// is all the stars within that distance, is there a galaxy that holds the majority of stars.
+/// Uses a modified shortest path algorithm that recursively searches for a majority galaxy
+/// </summary>
 namespace ConsoleApp2
 {
     class Star
@@ -17,11 +21,19 @@ namespace ConsoleApp2
             this.x = x;
             this.y = y;
         }
-
+        /// <summary>
+        /// Sets the distance between stars that constitue a galaxy
+        /// </summary>
+        /// <param name="distance"></param>
         void SetDistance(long distance) {
             this.distance = distance;
         }
-
+        /// <summary>
+        /// Finds if the star is part of a majorty galaxy given a star and an array of stars
+        /// </summary>
+        /// <param name="stars"></param>
+        /// <param name="star"></param>
+        /// <returns></returns>
        public static Star GetMajorityStar(Star[] stars, Star star) {
             long count = 0;
             foreach (Star currentStar in stars)
@@ -41,7 +53,12 @@ namespace ConsoleApp2
                 return null;
             }
         }
-
+        /// <summary>
+        /// Gets the count of stars in a galaxy
+        /// </summary>
+        /// <param name="stars"></param>
+        /// <param name="star"></param>
+        /// <returns></returns>
         long GetStarCount(Star[] stars, Star star) {
             long count = 0;
             foreach (Star currentStar in stars)
@@ -54,7 +71,11 @@ namespace ConsoleApp2
             }
             return count;
         }
-
+        /// <summary>
+        /// Finds if there is a galaxy that encompases a majority of stars in O(n) time
+        /// </summary>
+        /// <param name="stars"></param>
+        /// <returns></returns>
         public static Star findMajorityGalaxy(Star[] stars) {
             
             Star left;
