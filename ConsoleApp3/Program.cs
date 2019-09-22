@@ -11,8 +11,8 @@ namespace ConsoleApp3
     /// <summary>
     /// DAG Graph shortest paths algorithm implementation challenge
     /// takes in verticies in the form of city names and finds the shortest 
-    /// path from source cities to destination cities using a modified 
-    /// dijkstra's shortest path algorithm
+    /// path from source cities to destination cities a topological sort 
+    /// to update path weights
     /// </summary>
     class Graph
     {
